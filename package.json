@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "clean": "del ./build/*",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc",
+    "gitpush": "git add . && echo 'Enter Commit Message' && read message && git commit -m \"$message\" && git push",
+    "pub": "npm run gitpush && npm version patch && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
